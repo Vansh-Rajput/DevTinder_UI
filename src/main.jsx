@@ -5,6 +5,10 @@ import { RouterProvider } from 'react-router-dom'
 import Profile from './profile.jsx'
 import Navbar from './utils/Navbar.jsx'
 import Footer from './utils/Footer.jsx'
+import Login from './Login.jsx'
+import { Provider } from 'react-redux'
+import Appstore from './utils/appstore.jsx'
+
 
 const Main=()=>{
     return(
@@ -25,14 +29,21 @@ const Main=()=>{
               {
                 path:'/profile',
                 element:<Profile/>
-              }
+              },
+  
         ]
-
+        },
+       {
+          path:'/login',
+          element:<Login/>
         }
+     
         ])
 
 createRoot(document.getElementById('root')).render(
+  <Provider store={Appstore}>
     <RouterProvider router={applayout}/> 
+    </Provider>
 )
 
 
