@@ -11,3 +11,8 @@
   again setup withcredentials in axios api at login.jsx
 
 - setup redux toolkit and add the users through dipatch...
+
+
+# AXIOS
+- for axios.get(,{withcre}) use 2 parameters
+- for .post use 3 parameters, 2nd refers to body .post(,{},{withcre})  use it eventhough body is empty

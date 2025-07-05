@@ -3,27 +3,16 @@ import './index.css'
 import { createBrowserRouter, Outlet } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
 import Profile from './profile.jsx'
-import Navbar from './utils/Navbar.jsx'
-import Footer from './utils/Footer.jsx'
 import Login from './Login.jsx'
 import { Provider } from 'react-redux'
 import Appstore from './utils/appstore.jsx'
+import Body from './Body.jsx'
 
 
-const Main=()=>{
-    return(
-        <div>
-        <Navbar/>
-        <Outlet/>
-        <Footer/>
-        </div>
-    )
-}
-    
         const applayout=createBrowserRouter([
         {
           path:'/',
-          element:<Main/>,
+          element:<Login/>,
         
         children:[
               {
@@ -34,8 +23,8 @@ const Main=()=>{
         ]
         },
        {
-          path:'/login',
-          element:<Login/>
+          path:'/feed',
+          element:<Body/>
         }
      
         ])

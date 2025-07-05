@@ -1,10 +1,21 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import axios from 'axios';
+import { removeUser } from './Userslice';
+import { useDispatch, useSelector } from 'react-redux';
+import { Baseurl } from './constants';
+import { useNavigate } from 'react-router-dom';
 
 
 const Navbar = () => {
 
   const user=useSelector((store)=>store.user);   //comp re renders once we get the data in user, redux take care of it
+  const dispatch=useDispatch();
+  const navigate=useNavigate();
+
+const logout=async()=>{
+  const res=await axios.post(Baseurl+"/logout",{},{withCredentials:true});
+   dispatch(removeUser());
+   navigate("/");
+}
 
   return (
     <nav className="bg-black">
@@ -31,7 +42,8 @@ const Navbar = () => {
         </ul>
 
         {/* Right: Profile Photo */}
-        <div>
+        <div className='flex justify-center items-center gap-6'>
+        <p>Welcome,  { user?.first_name}</p>
           {
           user && <img
             src={user?.photourl}
@@ -39,7 +51,10 @@ const Navbar = () => {
             className="w-10 h-10 rounded-full object-cover"
           />
           }
+  
+          <button type="button" onClick={logout} className="text-white bg-blue-700 hover:bg-blue-800 cursor-pointer p-2.5 rounded-4xl text-xs">Log Out</button>
         </div>
+        
       </div>
     </nav>
   );

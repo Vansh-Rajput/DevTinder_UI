@@ -15,13 +15,13 @@ const Login = () => {
 const handlelogin=async()=>{
 
     try{
-        const res=await axios.post(Baseurl+"/login",{
+        const res=await axios.post(Baseurl +"/login",{
             email,
             password,
         },{withCredentials:true})
  
     dispatch(addUser(res.data)); //contains the info of user who signed in, navigate to home after this
-   navigate('/');
+   navigate('/feed');
     }
 
     catch(err){
