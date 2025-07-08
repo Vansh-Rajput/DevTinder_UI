@@ -2,7 +2,7 @@ import axios from 'axios';
 import { removeUser } from './Userslice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Baseurl } from './constants';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -12,19 +12,19 @@ const Navbar = () => {
   const navigate=useNavigate();
 
 const logout=async()=>{
-  const res=await axios.post(Baseurl+"/logout",{},{withCredentials:true});
+   await axios.post(Baseurl+"/logout",{},{withCredentials:true});
    dispatch(removeUser());
    navigate("/");
 }
 
   return (
-    <nav className="bg-black">
+    <nav className="bg-gray-900 w-full">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Left: Logo and Brand */}
         <div className="flex items-center">
 
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREhjNzMMDYvgbmtD0wEPxAa_61m130TNAezQ&s"
+            src="ChatGPT Image Jul 4, 2025, 11_20_33 AM.png"
             alt="logo"
             className="h-10 w-10 object-cover"
           />
@@ -34,9 +34,9 @@ const logout=async()=>{
 
         {/* Center: Nav Links */}
         <ul className="hidden md:flex space-x-8">
-          <li><a href="#" className="text-white hover:text-gray-400">Home</a></li>
-          <li><a href="#" className="text-white hover:text-gray-400">About</a></li>
-          <li><a href="#" className="text-white hover:text-gray-400">Services</a></li>
+          <li><a href="/main" className="text-white hover:text-gray-400" >Home</a></li>
+          <li><a href="/main/connections" className="text-white hover:text-gray-400">Connections</a></li>
+          <li><a href="/main/requests" className="text-white hover:text-gray-400">Requests</a></li>
           <li><a href="#" className="text-white hover:text-gray-400">Pricing</a></li>
           <li><a href="#" className="text-white hover:text-gray-400">Contact</a></li>
         </ul>
@@ -44,13 +44,14 @@ const logout=async()=>{
         {/* Right: Profile Photo */}
         <div className='flex justify-center items-center gap-6'>
         <p>Welcome,  { user?.first_name}</p>
-          {
+         <Link to={'/main/profile'} >{
           user && <img
             src={user?.photourl}
             alt="user"
-            className="w-10 h-10 rounded-full object-cover"
+            className="w-10 h-10 rounded-full object-cover pointer-cursor"
           />
           }
+          </Link>
   
           <button type="button" onClick={logout} className="text-white bg-blue-700 hover:bg-blue-800 cursor-pointer p-2.5 rounded-4xl text-xs">Log Out</button>
         </div>

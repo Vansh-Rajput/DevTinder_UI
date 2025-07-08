@@ -6,6 +6,7 @@ import { Baseurl } from './utils/constants';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { addUser } from './utils/Userslice';
+import Feed from './Feed';
 
 
 const Body = () => {
@@ -37,10 +38,11 @@ const Body = () => {
 
 
   return (
-        <div>
+        <div className='flex flex-col items-center  h-screen'>
         <Navbar/>
+        <div className='flex items-center flex-col justify-center h-screen'>
         <Outlet/>
-        <Footer/>
+        </div>
         </div>
     )
   }

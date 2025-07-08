@@ -7,6 +7,8 @@ import { Baseurl } from "./utils/constants";
 
 const Login = () => {
 
+const [errmsg,seterrmsg]=useState("");
+
     const [email,setemail]=useState("");
     const [password,setpassword]=useState("");
     const dispatch=useDispatch();
@@ -21,11 +23,11 @@ const handlelogin=async()=>{
         },{withCredentials:true})
  
     dispatch(addUser(res.data)); //contains the info of user who signed in, navigate to home after this
-   navigate('/feed');
+   navigate('/main');
     }
 
     catch(err){
-       console.log(err);
+      seterrmsg(err?.response?.data || "Something went Wrong");
     }
 }
 
@@ -73,7 +75,7 @@ const handlelogin=async()=>{
               />
             </div>
             <div className="flex items-center justify-between">
-           
+           <p className="text-sm text-red-600">{errmsg}</p>
               <a href="#" className="text-sm text-blue-600 hover:underline">
                 Forgot password?
               </a>

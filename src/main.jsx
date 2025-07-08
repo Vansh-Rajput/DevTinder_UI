@@ -7,24 +7,38 @@ import Login from './Login.jsx'
 import { Provider } from 'react-redux'
 import Appstore from './utils/appstore.jsx'
 import Body from './Body.jsx'
-
+import Feed from './Feed.jsx'
+import Connections from './Connections.jsx'
+import Requests from './Requests.jsx'
 
         const applayout=createBrowserRouter([
         {
           path:'/',
           element:<Login/>,
-        
-        children:[
-              {
-                path:'/profile',
-                element:<Profile/>
-              },
   
-        ]
         },
        {
-          path:'/feed',
-          element:<Body/>
+          path:'/main',
+          element:<Body/>,
+        children:[
+              {
+                path:'profile',
+                element:<Profile/>
+              },
+              {
+                path:'',
+                element: <Feed/>
+              },
+               {
+                path:'connections',
+                element: <Connections/>
+              },
+               {
+                path:'requests',
+                element: <Requests/>
+              }
+  
+        ]
         }
      
         ])
