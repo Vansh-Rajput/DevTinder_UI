@@ -1,5 +1,5 @@
 import axios from "axios"
-import { Baseurl } from "./utils/constants"
+import { Baseurl, errorfeed } from "./utils/constants"
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addfeed } from "./utils/Feedslice";
@@ -22,9 +22,21 @@ useEffect(()=>{
   call();
 },[]);
 
+if(selector?.length<=0)   // also handle when feed is empty
+  return (
+<div>
+<img src={errorfeed}/>
+<p className="text-center text-4xl">No More Feed</p>
+</div>
+)
+
   return (
     <div className="">
-   { selector&&<Card feed_data={selector[0]}/>}
+   { selector&&
+   
+selector.map((val)=><Card feed_data={val}/>)
+   
+   }
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { Baseurl } from "./utils/constants"
+import { Baseurl, errorreq } from "./utils/constants"
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addreq } from "./utils/reqslice";
@@ -37,21 +37,25 @@ const result=await axios.post(Baseurl+"/request/review/" +  + "/" ,{withCredenti
        call();
     },[]);
 
+    if(requests?.length===0  || requests=="you have no connections pending currently")
+      return (<div className="text-center">
+      <img src={errorreq}/>
+       <p className="text-4xl font-semibold">No  Requests  Currently</p>
+             </div>
+      )
 
-    if(!requests)
-        return;
-
-    if(requests.length===0)
-        return <p>No Requests Found</p>
 
   return (
     <div>
       <h1 class="mb-15 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-blue-800 from-sky-400">Requests</span></h1>
 
+        
   {
-      requests.map((val)=>{
-     return <Reqitems props={val?.fromuserId}/>
-      })
+    requests?.map((val)=>{
+     return <Reqitems props={val}/>
+      }
+      )
+      
     }
     </div>
   )

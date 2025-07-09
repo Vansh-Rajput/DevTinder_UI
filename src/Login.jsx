@@ -100,7 +100,7 @@ const handlelogin=async()=>{
       {/* Right: Illustration */}
       <div className="hidden md:flex items-center justify-center w-1/2">
         <img
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/authentication/illustration.svg"
+          src="https://cdni.iconscout.com/illustration/premium/thumb/analytics-building-illustration-download-in-svg-png-gif-file-formats--logo-digital-agency-build-growth-business-concept-pack-illustrations-3560996.png"
           alt="Login Illustration"
           className="w-4/5 h-auto"
         />

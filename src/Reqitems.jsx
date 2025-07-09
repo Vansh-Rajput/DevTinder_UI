@@ -1,7 +1,21 @@
+import { useState } from "react";
+import { Baseurl } from "./utils/constants";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { removereq } from "./utils/reqslice";
 
 const Reqitems = ({props}) => {
 
-   const {first_name,last_name,email,photourl,about}=props;
+   const {first_name,last_name,email,photourl,about}=props.fromuserId;
+   const dispatch=useDispatch(); 
+
+console.log(props);
+
+     
+   const call=async(reqstatus,reqid)=>{
+    await axios.post(Baseurl+"/request/review"+"/"+reqstatus+"/"+reqid,{},{withCredentials:true});
+     dispatch(removereq(reqid));        //after acc/rej remove it from UI
+   }
 
   return (
     
@@ -24,14 +38,15 @@ const Reqitems = ({props}) => {
          </div>
 
           <div class="text-sm text-gray-400 truncate">
-        <button type="button" class="cursor-pointer text-white bg-red-700 hover:bg-red-600  font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">Reject</button>
-        <button type="button" class="cursor-pointer text-white bg-blue-700 hover:bg-blue-500  font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">Accept</button>
+        <button onClick={()=>{call("rejected",props?._id.toString())}} type="button" class="cursor-pointer text-white bg-red-700 hover:bg-red-600  font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">Reject</button>
+        <button onClick={()=>{call("accepted",props?._id.toString())}} type="button" class="cursor-pointer text-white bg-blue-700 hover:bg-blue-500  font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">Accept</button>
          </div>
          
       </div>
 
    </li>
 </ul>
+    
 
   )
 }

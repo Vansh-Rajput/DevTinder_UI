@@ -7,7 +7,12 @@ const Reqslice=createSlice({
 
     reducers:{
         addreq:(state,action)=>action.payload
-    ,removereq:(state,action)=>null
+    ,removereq:(state,action)=>{
+        const filtered=state.filter((val)=>{
+         return val._id.toString()!=action.payload;
+        })
+        return filtered;
+    }
         
     }
 })
