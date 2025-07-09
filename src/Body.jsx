@@ -40,9 +40,7 @@ const Body = () => {
   return (
         <div className='flex flex-col items-center  h-screen'>
         <Navbar/>
-        <div className='flex items-center flex-col justify-center h-screen'>
         <Outlet/>
-        </div>
         </div>
     )
   }

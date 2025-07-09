@@ -18,14 +18,13 @@ const logout=async()=>{
 }
 
   return (
-    <nav className="bg-gray-900 w-full">
+    <nav className="bg-gray-950 w-full mb-10 ">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Left: Logo and Brand */}
         <div className="flex items-center">
 
           <img
-            src="ChatGPT Image Jul 4, 2025, 11_20_33 AM.png"
-            alt="logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREhjNzMMDYvgbmtD0wEPxAa_61m130TNAezQ&s"
             className="h-10 w-10 object-cover"
           />
 
