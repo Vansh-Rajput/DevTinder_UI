@@ -16,3 +16,10 @@
 # AXIOS
 - for axios.get(,{withcre}) use 2 parameters
 - for .post use 3 parameters, 2nd refers to body .post(,{},{withcre})  use it eventhough body is empty
+
+
+# Launching AWS
+- launch instance and create key value pair
+- cmod 400 .pem format
+- connected to machine through ssh -i "devtinder.pem" command., pem file is like secret key used to access to server.
+- install node version same on vscode "node -v" by nvm install 23.11.0
