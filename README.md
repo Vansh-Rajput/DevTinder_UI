@@ -84,9 +84,11 @@ http://localhost:5000/api/user/feed
 - first commit the code on github and push
 - now time to make same changes to vm machine too, keep checking git log to know changes were made, you will see your commit there.. now we dont see
 - use git pull, this will save changes from github to our vm machine.. ....fix issues if any by chatgpt....
-- now 
+now 
 - again copy these new changes from our dist to /var/www/html folder by  sudo scp -r dist/* /var/www/html/
+- maybe we delete existing dist and download new by npm run build as t may give overwriting errors...but to be safe always delete and npm  run build
 
+‼️ shortcut ‼️
 git pull origin main
 rm -rf dist
 npm run build
