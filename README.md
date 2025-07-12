@@ -33,7 +33,6 @@
 - copying all dist files to /var/.....opening first cd DevTinder_UI, then  sudo scp -r dist/* /var/www/html/.....
 - done!!! now enable your port 80 on aws->instance->security groups below, use public ip4 address of aws instance then ....
 
-- for deploying backend part, start by selecting the devtider file by cd DevTinder and then ssh -i.......
 
 - allow ip access in mongodb. of aws ip4.
 - npm start your proj but we also want our backend to run forever with frontend, so we will use pm2, it creates a new process which runs 24x7....npm install pm2 -g...
@@ -81,6 +80,10 @@ http://localhost:5000/api/user/feed
 
 
 
-
-
+# HOW DO WE REDEPLOY THE CHANGES MADE HERE,, like /api??
+- first commit the code on github and push
+- now time to make same changes to vm machine too, keep checking git log to know changes were made, you will see your commit there.. now we dont see
+- use git pull, this will save changes from github to our vm machine.. ....fix issues if any by chatgpt....
+- now 
+- again copy these new changes from our dist to /var/www/html folder by  sudo scp -r dist/* /var/www/html/
 

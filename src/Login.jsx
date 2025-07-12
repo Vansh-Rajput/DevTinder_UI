@@ -67,7 +67,7 @@ const handlesignup=async()=>{
         <a href="#" className="flex items-center mb-3 text-3xl font-semibold text-white" >
           <img
             className="w-15 h-15"
-            src="myimg.png"
+            src="/myimg.png"
             alt="logo"
           />
           Dev Tinder
