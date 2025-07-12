@@ -87,3 +87,8 @@ http://localhost:5000/api/user/feed
 - now 
 - again copy these new changes from our dist to /var/www/html folder by  sudo scp -r dist/* /var/www/html/
 
+git pull origin main
+rm -rf dist
+npm run build
+sudo cp -r dist/* /var/www/html/
+
