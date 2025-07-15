@@ -94,3 +94,7 @@ rm -rf dist
 npm run build
 sudo cp -r dist/* /var/www/html/
 
+
+# after using .env files in our backend, but it should be in our vm
+- setup .env in vm manually. because its not on github, its in our local, so just create a file by sudo nano .env and then cut-paste .env data in it and save
+- delete the old process in pm2, make a new process

@@ -32,12 +32,11 @@ const logout=async()=>{
         </div>
 
         {/* Center: Nav Links */}
-        <ul className="hidden md:flex space-x-8">
-          <li><a href="/main" className="text-white hover:text-gray-400" >Home</a></li>
+        <ul className="flex justify-center gap-7">
+          <li><a href="/main" className="text-white hover:text-gray-400 " >Home</a></li>
           <li><a href="/main/connections" className="text-white hover:text-gray-400">Connections</a></li>
           <li><a href="/main/requests" className="text-white hover:text-gray-400">Requests</a></li>
-          <li><a href="#" className="text-white hover:text-gray-400">Pricing</a></li>
-          <li><a href="#" className="text-white hover:text-gray-400">Contact</a></li>
+    
         </ul>
 
         {/* Right: Profile Photo */}

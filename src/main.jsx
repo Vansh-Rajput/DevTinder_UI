@@ -10,6 +10,7 @@ import Body from './Body.jsx'
 import Feed from './Feed.jsx'
 import Connections from './Connections.jsx'
 import Requests from './Requests.jsx'
+import Chat from './Chat.jsx'
 
         const applayout=createBrowserRouter([
         {
@@ -36,6 +37,10 @@ import Requests from './Requests.jsx'
                {
                 path:'requests',
                 element: <Requests/>
+              },
+                {
+                path:'chat/:toId',
+                element: <Chat/>
               }
   
         ]

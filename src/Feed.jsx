@@ -33,7 +33,6 @@ if(selector?.length<=0)   // also handle when feed is empty
   return (
     <div className="">
    { selector&&
-   
 selector.map((val)=><Card feed_data={val}/>)
    
    }
