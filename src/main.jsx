@@ -11,6 +11,11 @@ import Feed from './Feed.jsx'
 import Connections from './Connections.jsx'
 import Requests from './Requests.jsx'
 import Chat from './Chat.jsx'
+import Privacy from './utils/Privacy.jsx'
+import Cancellation from './utils/Cancellation.jsx'
+import Shipping from './utils/Shipping.jsx'
+import Terms from './utils/Terms.jsx'
+import Contact from './utils/Contact.jsx'
 
         const applayout=createBrowserRouter([
         {
@@ -18,6 +23,32 @@ import Chat from './Chat.jsx'
           element:<Login/>,
   
         },
+        {
+          path:'/Privacy',
+          element:<Privacy/>,
+  
+        },
+        {
+          path:'/Cancellation',
+          element:<Cancellation/>,
+  
+        },
+        {
+          path:'/Shipping',
+          element:<Shipping/>,
+  
+        },
+        {
+          path:'/Terms',
+          element:<Terms/>,
+  
+        },
+         {
+          path:'/Contact',
+          element:<Contact/>,
+  
+        },
+
        {
           path:'/main',
           element:<Body/>,

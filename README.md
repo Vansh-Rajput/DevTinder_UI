@@ -88,12 +88,16 @@ now
 - again copy these new changes from our dist to /var/www/html folder by  sudo scp -r dist/* /var/www/html/
 - maybe we delete existing dist and download new by npm run build as t may give overwriting errors...but to be safe always delete and npm  run build
 
-‼️ shortcut ‼️
+‼️ shortcut for FRONTEND OR DevTinder_UI on ubuntu‼️
 git pull origin main
 rm -rf dist
+npm i
 npm run build
 sudo cp -r dist/* /var/www/html/
 
+
+‼️ for backend part ‼️
+git pull , npm i and pm2 restart
 
 # after using .env files in our backend, but it should be in our vm
 - setup .env in vm manually. because its not on github, its in our local, so just create a file by sudo nano .env and then cut-paste .env data in it and save

@@ -61,7 +61,8 @@ const handlesignup=async()=>{
 }
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex flex-col ">
+    <div className="flex flex-1">
       {/* Left: Login Form */}
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center px-6 py-3 ">
         <a href="#" className="flex items-center mb-3 text-3xl font-semibold text-white" >
@@ -190,6 +191,34 @@ const handlesignup=async()=>{
           className="w-4/5 h-auto"
         />
       </div>
+</div>
+
+
+
+<footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-900">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">DevTinder™</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="/Cancellation" class="hover:underline me-4 md:me-6">Cancellation & Refunds</a>
+        </li>
+         <li>
+            <a href="/Terms" class="hover:underline me-4 md:me-6">Terms and Conditions </a>
+        </li>
+        <li>
+            <a href="/Privacy" class="hover:underline me-4 md:me-6">Privacy</a>
+        </li>
+        <li>
+            <a href="/Shipping" class="hover:underline me-4 md:me-6">Shipping</a>
+        </li>
+        <li>
+            <a href="/Contact" class="hover:underline">Contact Us</a>
+        </li>
+    </ul>
+    </div>
+</footer>
+
     </div>
   );
 };
