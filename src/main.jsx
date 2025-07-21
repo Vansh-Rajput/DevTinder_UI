@@ -16,6 +16,7 @@ import Cancellation from './utils/Cancellation.jsx'
 import Shipping from './utils/Shipping.jsx'
 import Terms from './utils/Terms.jsx'
 import Contact from './utils/Contact.jsx'
+import Premium from './Premium.jsx'
 
         const applayout=createBrowserRouter([
         {
@@ -72,7 +73,11 @@ import Contact from './utils/Contact.jsx'
                 {
                 path:'chat/:toId',
                 element: <Chat/>
-              }
+              },
+                 {
+                path:'premium',
+                element:<Premium/>
+              },
   
         ]
         }

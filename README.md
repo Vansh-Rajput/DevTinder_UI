@@ -99,6 +99,24 @@ sudo cp -r dist/* /var/www/html/
 ‼️ for backend part ‼️
 git pull , npm i and pm2 restart
 
+
 # after using .env files in our backend, but it should be in our vm
 - setup .env in vm manually. because its not on github, its in our local, so just create a file by sudo nano .env and then cut-paste .env data in it and save
 - delete the old process in pm2, make a new process
+
+
+
+# How Razorpay Works?
+- when we click on PAY NOW button in frontend, it will make a call to "create order" to backend, since razorpay needs a secret key to execute which is available at backend.
+- after that backend will make a req to razorpay to create order and pass its secret key to it..
+- then razorpay sends back an orderid to backend, it contains info about the transaction..
+- from there backend again pass this orderid to frontend, now a payment box appears like credit,debit cards or payment via UPI etc...
+- once payment was done, razorpay behind the scenes informs the backend that a payment was made {by using webhook} {this webhook kind of informs the server about any changes occuring in account} 
+- in this way razorpay tells the backend whether transaction was succ/failure via webhooks...
+
+- for integration check the docs of:- https://razorpay.com/docs/payments/server-integration/nodejs/integration-steps/
+
+# Razorpay webhook
+- razorpay will call your validate webhook api whenever there is success or failure in payment.
+- its an important step else, Anyone can manually hit your webhook route and fake a "payment.captured" event.
+- once confirmed its valid, we save details to DB and premium features are then enabled

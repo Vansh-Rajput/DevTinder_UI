@@ -32,11 +32,18 @@ const logout=async()=>{
         </div>
 
         {/* Center: Nav Links */}
-        <ul className="flex justify-center gap-7">
+        <ul className="flex justify-center items-center gap-7">
           <li><a href="/main" className="text-white hover:text-gray-400 " >Home</a></li>
           <li><a href="/main/connections" className="text-white hover:text-gray-400">Connections</a></li>
           <li><a href="/main/requests" className="text-white hover:text-gray-400">Requests</a></li>
-    
+
+         <button onClick={()=>{navigate('/main/premium')}} className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] ">
+  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 text-sm font-medium text-white backdrop-blur-3xl">
+    Premium
+  </span>
+</button>
+
         </ul>
 
         {/* Right: Profile Photo */}
