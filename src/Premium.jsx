@@ -1,8 +1,18 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useState } from 'react'
 import { Baseurl } from './utils/constants'
 
 const Premium = () => {
+
+const [subscrip,setsubscrip]=useState(false);
+
+  const verifyuser=async()=>{
+    const userpremium=await axios.post(Baseurl+"/payment/verify",{},{withCredentials:true});
+    
+    if(userpremium?.data?.check)
+    setsubscrip(true);
+  }
+
 
 const handleclick=async()=>{
   const call=await axios.post(Baseurl+"/payment/create",{
@@ -28,13 +38,16 @@ const {orderId,userId,status,amount,currency,receipt,notes}=call.data.saved;
         theme: {
           color: '#8B0000'
         },
+        handler:{
+          verifyuser    //called once payment is done on razorpay dialog box
+        }
       };
    
   const rzp = new window.Razorpay(options);   //this will create an object of razorpay and dialog box of RP will pop up
   rzp.open();
 }
 
-  return (
+  return subscrip?(
     <div>
        <div class="relative isolate bg-gray-900 px-6 lg:px-8">
   <div aria-hidden="true" class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
@@ -126,7 +139,7 @@ const {orderId,userId,status,amount,currency,receipt,notes}=call.data.saved;
 </div>
 
     </div>
-  )
+  ):"You are already a member"
 }
 
 export default Premium
