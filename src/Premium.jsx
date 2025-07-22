@@ -47,7 +47,7 @@ const {orderId,userId,status,amount,currency,receipt,notes}=call.data.saved;
   rzp.open();
 }
 
-  return subscrip?(
+  return !(subscrip)?(
     <div>
        <div class="relative isolate bg-gray-900 px-6 lg:px-8">
   <div aria-hidden="true" class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
