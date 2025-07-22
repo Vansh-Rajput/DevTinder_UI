@@ -21,7 +21,7 @@
 # Launching AWS
 - launch instance and create key value pair
 - cmod 400 .pem format
-- connected to machine through ---  ssh -i "dtinder.pem"....in connect of instance , pem file is like secret key used to access to server.
+- connected to machine through --- ssh -i "dtinder.pem" ubuntu@ec2-13-62-18-115.eu-north-1.compute.amazonaws.com.............in connect of instance , pem file is like secret key used to access to server.
 - install node version same on vscode "node -v" by nvm install 23.11.0
 - git clone https...... on to terminal and use username Vansh-Rajput and personal access token from github...generate if expired..
 - use ls to check files in your virtual system, will see both front/back files
