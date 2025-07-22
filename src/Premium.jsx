@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Baseurl } from './utils/constants'
 
 const Premium = () => {
@@ -12,6 +12,8 @@ const [subscrip,setsubscrip]=useState(false);
     if(userpremium?.data?.check)
     setsubscrip(true);
   }
+
+  useEffect(()=>{verifyuser()},[]);
 
 
 const handleclick=async()=>{
@@ -36,9 +38,9 @@ const {orderId,userId,status,amount,currency,receipt,notes}=call.data.saved;
         theme: {
           color: '#8B0000'
         },
-        handler:{
+        handler:
           verifyuser    //called once payment is done on razorpay dialog box
-        }
+        
       };
    
   const rzp = new window.Razorpay(options);   //this will create an object of razorpay and dialog box of RP will pop up
