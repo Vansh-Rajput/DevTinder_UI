@@ -29,7 +29,6 @@ const saveprofile=async(e)=>{
   photourl: photo,
           },{withCredentials:true});
             
-          console.log(edit?.data)
           dispatch(addUser(edit?.data));
     }
     catch(err){

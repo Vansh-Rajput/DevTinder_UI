@@ -15,7 +15,6 @@ const Feed = () => {
 if(selector)return;
 const data= await axios.get(Baseurl+"/user/feed",{withCredentials:true});
    dispatch(addfeed(data?.data));
-   console.log(data?.data)
     }
 
 useEffect(()=>{

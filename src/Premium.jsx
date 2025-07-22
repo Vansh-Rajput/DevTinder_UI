@@ -8,7 +8,7 @@ const [subscrip,setsubscrip]=useState(false);
 
   const verifyuser=async()=>{
     const userpremium=await axios.post(Baseurl+"/payment/verify",{},{withCredentials:true});
-    
+    console.log(userpremium)
     if(userpremium?.data?.check)
     setsubscrip(true);
   }
@@ -18,8 +18,6 @@ const handleclick=async()=>{
   const call=await axios.post(Baseurl+"/payment/create",{
     
   },{withCredentials:true})
-
-console.log(call);
 
 const {orderId,userId,status,amount,currency,receipt,notes}=call.data.saved;
 
