@@ -17,3 +17,7 @@ else
     return io('/',{path:"/api/socket.io"})    // check api calls of socket, u will find socket.io extra
 }                                            // here  '/' means connect to same domain or ip where my frontend
                                         //was loaded
+
+
+
+                                        
