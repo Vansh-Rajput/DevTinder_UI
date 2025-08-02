@@ -9,7 +9,7 @@ const Card = ({ feed_data,setover }) => {
 
   const dispatch = useDispatch();
 
-  const { first_name, last_name, photourl, about, _id , ispremium } = feed_data;
+  const { first_name, last_name, photourl, about, _id , ispremium, skills, score } = feed_data;
 
   const handleSwipe = async (direction) => {
     if (direction === 'left') {
@@ -31,12 +31,22 @@ const Card = ({ feed_data,setover }) => {
       className="absolute cursor-grab"
     >
       <div className="w-[400px] h-min bg-gray-900 border border-gray-700 rounded-lg p-2.5 shadow-xl shadow-gray-800">
-        <img className="rounded-lg h-[500px] object-cover pointer-events-none" src={photourl} />
-        <div className="p-3 flex flex-col gap-3">
+        <img className="rounded-lg h-[460px] object-cover pointer-events-none" src={photourl} />
+        <div className="p-3 flex flex-col gap-2">
           <h5 className="mb-2 text-2xl font-bold text-white flex items-center justify-between">
             {first_name.toUpperCase()} {last_name.toUpperCase()}
-        { ispremium && <img src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.png" className='w-[50px] h-[50px]'/> }
+          
+     { ispremium && <img src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.png" className='w-[50px] h-[50px]'/> }
           </h5>
+
+          <div className="w-[50%] bg-gray-700 h-1 rounded-full">
+  <div
+    className="bg-green-500 h-1 rounded-full"
+        style={{ width: `${score}%` }}
+  />
+</div>
+<p className="text-xs text-gray-300">{score}% skill match</p>
+
           <p className="text-gray-400">{about}</p>
         </div>
       </div>
