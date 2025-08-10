@@ -18,7 +18,7 @@ const logout=async()=>{
 }
 
   return (
-    <nav className="bg-gray-900 w-full mb-10 ">
+    <nav className="bg-gray-900 w-full mb-10 select-none">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Left: Logo and Brand */}
         <div className="flex items-center">

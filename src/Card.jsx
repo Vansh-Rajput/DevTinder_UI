@@ -28,7 +28,7 @@ const Card = ({ feed_data,setover }) => {
          //work evenif swipe was slow
       onSwipe={(direction)=>handleSwipe(direction,_id)} //inbuilt
       preventSwipe={['up', 'down']}
-      className="absolute "
+      className="absolute select-none cursor-grab"
     >
       <div className="w-[400px] h-min bg-gray-900 border border-gray-700 rounded-lg p-2.5 shadow-xl shadow-gray-800">
         <img className="rounded-lg h-[460px] w-[400px] object-cover pointer-events-none" src={photourl} />
