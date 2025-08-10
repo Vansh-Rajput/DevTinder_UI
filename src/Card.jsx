@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { removefeed } from './utils/Feedslice';
 import axios from 'axios';
 import { Baseurl } from './utils/constants';
-import { useEffect, useState } from 'react';
+
 
 const Card = ({ feed_data,setover }) => {
 
@@ -31,7 +31,7 @@ const Card = ({ feed_data,setover }) => {
       className="absolute "
     >
       <div className="w-[400px] h-min bg-gray-900 border border-gray-700 rounded-lg p-2.5 shadow-xl shadow-gray-800">
-        <img className="rounded-lg h-[460px] object-cover pointer-events-none" src={photourl} />
+        <img className="rounded-lg h-[460px] w-[400px] object-cover pointer-events-none" src={photourl} />
         <div className="p-3 flex flex-col">
           <h5 className="mb-3 text-2xl font-bold text-white flex items-center justify-between">
             {first_name.toUpperCase()} {last_name.toUpperCase()}
@@ -45,7 +45,7 @@ const Card = ({ feed_data,setover }) => {
         style={{ width: `${score}%` }}
   />
 </div>
-<p className="text-xs text-gray-300">{score}% skill match</p>
+<p className="text-xs text-gray-300">{Math.ceil(score)}% skill match</p>
 
           <p className="text-gray-400 mt-3 mb-1">{about}</p>
 

@@ -84,7 +84,9 @@ const Feed = () => {
     </div>:(
     <div className="text-white text-xl text-center font-semibold mt-10">
       Swipes Over for Today
-    </div>
+      </div>
+
+    
   )
 
 
