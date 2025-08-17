@@ -22,15 +22,6 @@ console.log(req?.data)
        console.log(err);
         }
     }
-
-      const fulfill=async()=>{
-        try{
-const result=await axios.post(Baseurl+"/request/review/" +  + "/" ,{withCredentials:true});
-        }
-        catch(err){
-       console.log(err);
-        }
-    }
     
 
     useEffect(()=>{
@@ -38,18 +29,17 @@ const result=await axios.post(Baseurl+"/request/review/" +  + "/" ,{withCredenti
     },[]);
 
     if(requests?.length===0  || requests=="you have no connections pending currently")
-      return (<div className="text-center">
-      <img src={errorreq}/>
-       <p className="text-4xl font-semibold">No  Requests  Currently</p>
+      return (<div className="text-center mt-16">
+      <img className="w-52 md:w-96" src={errorreq}/>
+       <p className="md:text-4xl font-semibold">No Pending Request </p>
              </div>
       )
 
 
   return (
     <div>
-      <h1 class="mb-15 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-blue-800 from-sky-400">Requests</span></h1>
+      <h1 class="mb-15 mt-8 text-center text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-blue-800 from-sky-400">Requests</span></h1>
 
-        
   {
     requests?.map((val)=>{
      return <Reqitems props={val}/>

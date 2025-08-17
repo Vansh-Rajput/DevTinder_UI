@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { Baseurl, createsocketconnection } from './utils/constants';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import EmojiPicker from 'emoji-picker-react';
 
 const Chat = () => {
     const {toId}=useParams();
@@ -64,11 +65,11 @@ return ()=>{
 
   return (
  
-        <div class="h-[660px] w-[80%] flex flex-col b">
+        <div class="h-[660px] w-[90%] md:w-[80%] flex flex-col b">
  
 
     <div class="bg-gray-900 flex-1 overflow-y-scroll ">
-       <div className='text-center font-semibold text-2xl'>Start Your First Chat</div>
+       <div className='text-center font-semibold md:text-2xl'>Start Your First Chat</div>
 
 {
   
@@ -131,13 +132,18 @@ return ()=>{
     </div>
 
 
-    <div class="bg-gray-900 px-4 py-2">
+    <div class="bg-gray-900 py-2">
         <div class="flex items-center ">
-            <input value={msg} onChange={(e)=>{setmsg(e.target.value)}} class=" w-full  border-2 rounded-full py-2 px-4 mr-2 border-white" type="text" placeholder="Type your message...
+            <textarea rows={1}  value={msg} onChange={(e)=>{setmsg(e.target.value);
+               e.target.style.height ="auto";
+    e.target.style.height = Math.min(e.target.scrollHeight, 180) + "px";
+
+            }} class="break-words resize-none overflow-y-auto w-full  border-2 rounded-2xl py-2 px-4 mr-2 border-white" type="text" placeholder="Type your message...
             " onKeyDown={(e)=>{if(e.key==="Enter" && msg.trim()!=="")sendmsg()}}/>
-            <button onClick={sendmsg} class="bg-blue-700 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-full w-26">
+            <button onClick={sendmsg} class="bg-blue-700 hover:bg-blue-600 text-white text-sm py-2 md:px-4 rounded-full w-26">
         Send ➤
       </button>
+
         </div>
     </div>
 

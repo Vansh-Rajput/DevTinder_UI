@@ -30,10 +30,10 @@ const Card = ({ feed_data,setover }) => {
       preventSwipe={['up', 'down']}
       className="absolute select-none cursor-grab"
     >
-      <div className="w-[400px] h-min bg-gray-900 border border-gray-700 rounded-lg p-2.5 shadow-xl shadow-gray-800">
-        <img className="rounded-lg h-[460px] w-[400px] object-cover pointer-events-none" src={photourl} />
+      <div className="w-[300px] md:w-[400px] h-min bg-gray-900 border border-gray-700 rounded-lg p-2.5 shadow-xl shadow-gray-800">
+        <img className="rounded-lg h-[320px] w-[300px] md:h-[460px] md:w-[400px] object-cover pointer-events-none" src={photourl} />
         <div className="p-3 flex flex-col">
-          <h5 className="mb-3 text-2xl font-bold text-white flex items-center justify-between">
+          <h5 className="mb-3 text-xl md:text-2xl font-bold text-white flex items-center justify-between">
             {first_name.toUpperCase()} {last_name.toUpperCase()}
           
      { ispremium && <img src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.png" className='w-[50px] h-[50px]'/> }
@@ -47,14 +47,14 @@ const Card = ({ feed_data,setover }) => {
 </div>
 <p className="text-xs text-gray-300">{Math.ceil(score)}% skill match</p>
 
-          <p className="text-gray-400 mt-3 mb-1">{about}</p>
+          <p className="text-sm text-gray-400 mt-2 mb-1">{about}</p>
 
 
     <div className="flex flex-wrap gap-2">
   {skills.map((skill, idx) => (
     <span
       key={idx}
-      className="bg-gray-800 text-blue-400 text-xs font-medium px-2 py-1 rounded-full border border-blue-700"
+      className="bg-gray-800 text-blue-400 text-[8px] md:text-xs font-medium px-2 py-1 rounded-full border border-blue-700"
     >
       {skill}
     </span>

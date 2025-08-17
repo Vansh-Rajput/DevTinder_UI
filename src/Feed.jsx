@@ -69,9 +69,9 @@ const Feed = () => {
           <Card key={val._id} feed_data={val} over={over} setover={setover}/>
         ))}
 
-            <div className="absolute bottom-10 left-10">       
-        { premium && <p onClick={undo} className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold p-4 cursor-pointer" >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <div className="absolute bottom-4 left-2 md:bottom-10 md:left-10">       
+        { premium && <p onClick={undo} className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold p-3 cursor-pointer" >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4 md:size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m15 15-6 6m0 0-6-6m6 6V9a6 6 0 0 1 12 0v3" />
           </svg>
         </p> }

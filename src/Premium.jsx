@@ -50,17 +50,18 @@ const {orderId,userId,status,amount,currency,receipt,notes}=call.data.saved;
 
   return !(subscrip)?(
     <div>
-       <div class="relative isolate bg-gray-900 px-6 lg:px-8">
-  <div aria-hidden="true" class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
+       <div class=" relative isolate bg-gray-900 px-6 lg:px-8">
+  <div aria-hidden="true"  class=" absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
     <div class="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#4333f2] to-[#4b3ff6] opacity-30"></div>
   </div>
   <div class="mx-auto max-w-4xl text-center">
     <h2 class="text-xl font-semibold text-indigo-500">Pricing</h2>
-    <p class="mt-2 text-5xl font-semibold tracking-tight text-balance text-white sm:text-6xl">Choose the right plan for you</p>
+    <p class="md:block hidden mt-2 md:text-5xl font-semibold tracking-tight text-balance text-white sm:text-6xl">Choose the right plan for you</p>
   </div>
-  <p class="mx-auto mt-3 max-w-2xl text-center text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">Go Premium, Unlock exclusive features to enhance your DevTinder experience..</p>
+
+  <p class="mx-auto mt-3 max-w-2xl text-center md:text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">Go Premium, Unlock exclusive features to enhance your DevTinder experience..</p>
   <div class="mx-auto mt-10 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-10 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
-    <div class="rounded-3xl rounded-t-3xl bg-gray-100 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-7 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl">
+    <div class="hidden md:block rounded-3xl rounded-t-3xl bg-gray-100 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-7 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl">
       <h3 id="tier-hobby" class="text-base/7 font-semibold text-indigo-600">Default</h3>
       <p class="mt-4 flex items-baseline gap-x-2">
         <span class="text-5xl font-semibold tracking-tight text-gray-900">Free</span>
@@ -77,7 +78,7 @@ const {orderId,userId,status,amount,currency,receipt,notes}=call.data.saved;
           <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-600">
             <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
           </svg>
-       Chat with 5 Users/day
+       Unlimited Chatting
         </li>
         <li class="flex gap-x-3">
           <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-600">
@@ -89,34 +90,34 @@ const {orderId,userId,status,amount,currency,receipt,notes}=call.data.saved;
       </ul>
 
     </div>
-    <div class="relative rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 ">
-      <h3 id="tier-enterprise" class="text-base/7 font-semibold text-indigo-400">Premium</h3>
+    <div class="relative rounded-3xl bg-gray-100 md:bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 ">
+      <h3 id="tier-enterprise" class="text-base/7 font-semibold text-indigo-500">Premium</h3>
       <p class="mt-2 flex items-baseline gap-x-2">
-        <span class="text-5xl font-semibold tracking-tight text-white">₹299</span>
+        <span class="text-5xl font-semibold tracking-tight text-black md:text-white">₹500</span>
         <span class="text-base text-gray-400"></span>
       </p>
-      <p class="mt-6 text-base/7 text-gray-300">Included With Premium.</p>
+      <p class="mt-6 text-base/7 text-gray-700 md:text-gray-300">Included With Premium.</p>
       <ul role="list" class="mt-5 space-y-3 text-sm/6 text-gray-300 ">
-        <li class="flex gap-x-3">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+        <li class="flex gap-x-3 text-black md:text-white">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-500">
             <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
           </svg>
            No daily limits, swipe freely
         </li>
-        <li class="flex gap-x-3">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+        <li class="flex gap-x-3 text-black md:text-white">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-500">
             <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
           </svg>
           Unlimited Chatting with Users
         </li>
-        <li class="flex gap-x-3">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+        <li class="flex gap-x-3 text-black md:text-white">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-500">
             <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
           </svg>
           Stand out with premium & priority tags.
         </li>
-        <li class="flex gap-x-3">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+        <li class="flex gap-x-3 text-black md:text-white">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-500">
             <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
           </svg>
        Rewind your last swipe anytime.
