@@ -122,7 +122,7 @@ const handlesignup=async()=>{
               </label>
               <input
                 type="text"
-                placeholder="Gender..."
+                placeholder="male, female...."
                 className="bg-gray-300 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
                  onChange={(e)=>{setgender(e.target.value)}}
               />
