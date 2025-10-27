@@ -24,7 +24,7 @@ const Cardprofile = ({photo}) => {
           {select?.first_name?.toUpperCase()} {select?.last_name?.toUpperCase()}
           {select?.ispremium && (
             <img
-              src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.png"
+              src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.webp"
               className="w-[50px] h-[50px]"
               alt="Premium"
             />

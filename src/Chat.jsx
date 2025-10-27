@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import { Baseurl, createsocketconnection } from './utils/constants';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import EmojiPicker from 'emoji-picker-react';
 
 const Chat = () => {
     const {toId}=useParams();

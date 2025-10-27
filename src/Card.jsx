@@ -36,7 +36,7 @@ const Card = ({ feed_data,setover }) => {
           <h5 className="mb-3 text-xl md:text-2xl font-bold text-white flex items-center justify-between">
             {first_name.toUpperCase()} {last_name.toUpperCase()}
           
-     { ispremium && <img src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.png" className='w-[50px] h-[50px]'/> }
+     { ispremium && <img src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.webp" className='w-[50px] h-[50px]'/> }
           </h5>
 
           <div className="w-[50%] bg-gray-700 h-1 rounded-full">

@@ -24,7 +24,7 @@ const logout=async()=>{
     {/* Left: Logo + Brand */}
     <div className='flex gap-32 mb-2'>
     <div className="flex items-center">
-      <img src="/myimg.png" className="h-8 w-8 md:h-10 md:w-10 object-cover" />
+      <img src="/myimg.webp" className="h-8 w-8 md:h-10 md:w-10 object-cover" loading='lazy' />
       <span className="text-white text-lg md:text-2xl font-semibold ml-1">
         Dev Tinder
       </span>

@@ -68,8 +68,9 @@ const handlesignup=async()=>{
         <a href="#" className="flex items-center mb-3 text-3xl font-semibold text-white" >
           <img
             className="w-15 h-15"
-            src="/myimg.png"
+            src="/myimg.webp"
             alt="logo"
+            loading="lazy"
           />
           Dev Tinder
         </a>
@@ -78,7 +79,7 @@ const handlesignup=async()=>{
           <h1 className="text-2xl font-bold mb-6 text-gray-200">
             {!issignup?"Sign In":"Sign up"}
           </h1>
-          <form className="space-y-3" action="#">
+          <form className="space-y-3" action="#" onSubmit={(e)=>{e.preventDefault()}}>
          
          {issignup && <div className="space-y-3">
                  <div>
@@ -165,12 +166,13 @@ const handlesignup=async()=>{
             <div className="flex items-center justify-between text-sm text-red-600">{errmsg}</div>
 
             <button
-              type="button"
+              type="submit"
             onClick={issignup?handlesignup:handlelogin} 
               className=" w-full bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm px-5 py-2.5"
             >
              {!issignup?"Sign in":"Sign up"}
             </button>
+
             <p className="text-sm text-gray-600">
               { issignup==false?"Don’t have an account yet ? ":"Already have an account ? " }
 
@@ -189,6 +191,7 @@ const handlesignup=async()=>{
           src="https://cdni.iconscout.com/illustration/premium/thumb/analytics-building-illustration-download-in-svg-png-gif-file-formats--logo-digital-agency-build-growth-business-concept-pack-illustrations-3560996.png"
           alt="Login Illustration"
           className="w-4/5 h-auto"
+          loading="lazy"
         />
       </div>
 </div>

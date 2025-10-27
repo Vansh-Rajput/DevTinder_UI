@@ -27,10 +27,31 @@
 - for .post use 3 parameters, 2nd refers to body .post(,{},{withcre})  use it eventhough body is empty
 
 
+# Forward Proxy vs Reverse Proxy
+
+Intermediate that is present in front of client.
+In forward proxy, client know the proxy server’s address, but not necessarily the destination’s real identity or server id (the proxy handles that).
+
+Server sees only the proxy IP, not your real IP.
+
+- used for security purpose as it hides the ip of user who sent the req and also it checks whether req sent back by server is malicious or not...
+
+
+
+- Intermediate in front of server. it takes the req from client and sends to one of the req server... like / for frontend, /api for backend.....
+
+Client does NOT know the proxy — it’s completely transparent.
+
+In reverse proxy, you know the public domain (like devtinder.com), but not which internal server handled your request.
+- load balancing --> to distribute load equally among servers instead of 1 server doing all tasks...
+- caching(common in both) --> proxy server will cache the data which is used a lot by multiple users on a server....
+
+
+
 # Launching AWS
 - launch instance and create key value pair
 - cmod 400 .pem format
-- connected to machine through --- ssh -i "dtinder.pem" ubuntu@ec2-13-62-18-115.eu-north-1.compute.amazonaws.com.............in connect of instance , pem file is like secret key used to access to server.
+- connected to machine through --- ssh -i "dtinder.pem" ubuntu@ec2-51-20-116-239.eu-north-1.compute.amazonaws.com.............in connect of instance , pem file is like secret key used to access to server.
 - install node version same on vscode "node -v" by nvm install 23.11.0
 - git clone https...... on to terminal and use username Vansh-Rajput and personal access token from github...generate if expired..
 - use ls to check files in your virtual system, will see both front/back files
@@ -80,8 +101,8 @@
 🌐 User/browser hits:
 http://13.62.18.115/api/user/feed
 
-🔄 NGINX says:
-“Oh, this matches /api/ — let me pass this to the backend”
+🔄 NGINX read it as:
+“ this matches /api/ — so pass this to the backend”
 
 🖥️ Internally, NGINX calls:
 http://localhost:5000/api/user/feed

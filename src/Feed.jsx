@@ -1,10 +1,11 @@
 import axios from "axios";
 import { Baseurl, errorfeed } from "./utils/constants";
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addfeed } from "./utils/Feedslice";
-import Card from "./Card";
 import Toast, { UndoToast } from "./utils/Toast";
+
+const Card=lazy(()=>import("./Card"));
 
 const Feed = () => {
   const [premium,setpremium]=useState(false);
