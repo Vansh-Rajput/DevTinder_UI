@@ -70,7 +70,7 @@ const handlesignup=async()=>{
             className="w-15 h-15"
             src="/myimg.webp"
             alt="logo"
-            loading="lazy"
+            fetchPriority="high"
           />
           Dev Tinder
         </a>
@@ -191,7 +191,7 @@ const handlesignup=async()=>{
           src="https://cdni.iconscout.com/illustration/premium/thumb/analytics-building-illustration-download-in-svg-png-gif-file-formats--logo-digital-agency-build-growth-business-concept-pack-illustrations-3560996.png"
           alt="Login Illustration"
           className="w-4/5 h-auto"
-          loading="lazy"
+          fetchPriority="high"
         />
       </div>
 </div>
