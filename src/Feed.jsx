@@ -43,7 +43,7 @@ const Feed = () => {
   if (!selector || selector.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
-        <img src={errorfeed} className="w-64" />
+        <img src={errorfeed} className="w-64" alt="over"/>
         <p className="text-center text-4xl mt-4 text-white">No More Feed</p>
       </div>
     );

@@ -30,7 +30,7 @@ console.log(req?.data)
 
     if(requests?.length===0  || requests=="you have no connections pending currently")
       return (<div className="text-center mt-16">
-      <img className="w-52 md:w-96" src={errorreq}/>
+      <img className="w-52 md:w-96" src={errorreq} alt="no req"/>
        <p className="md:text-4xl font-semibold">No Pending Request </p>
              </div>
       )
