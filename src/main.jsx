@@ -16,7 +16,10 @@ import Cancellation from './utils/Cancellation.jsx'
 import Shipping from './utils/Shipping.jsx'
 import Terms from './utils/Terms.jsx'
 import Contact from './utils/Contact.jsx'
-import Premium from './Premium.jsx'
+import { lazy, Suspense } from 'react'
+
+
+const Premium=lazy(()=>import('./Premium.jsx'));
 
 
         const applayout=createBrowserRouter([
@@ -77,7 +80,7 @@ import Premium from './Premium.jsx'
               },
                  {
                 path:'premium',
-                element:<Premium/>
+                element:(<Suspense fallback={<div>Loading...</div>}><Premium/></Suspense>)
               },
   
         ]
