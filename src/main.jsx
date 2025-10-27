@@ -16,7 +16,8 @@ import Cancellation from './utils/Cancellation.jsx'
 import Shipping from './utils/Shipping.jsx'
 import Terms from './utils/Terms.jsx'
 import Contact from './utils/Contact.jsx'
-import PremiumLazy from './utils/Premiumlazy.jsx'
+import Premium from './Premium.jsx'
+
 
         const applayout=createBrowserRouter([
         {
@@ -76,7 +77,7 @@ import PremiumLazy from './utils/Premiumlazy.jsx'
               },
                  {
                 path:'premium',
-                element:<PremiumLazy/>
+                element:<Premium/>
               },
   
         ]

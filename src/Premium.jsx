@@ -18,10 +18,14 @@ const [subscrip,setsubscrip]=useState(false);
 
 
 const handleclick=async()=>{
-  const call=await axios.post(Baseurl+"/payment/create",{
-    
-  },{withCredentials:true})
 
+  const script=document.createElement("script");
+  script.src="https://checkout.razorpay.com/v1/checkout.js";
+  document.body.appendChild(script);
+
+  script.onload=async()=>{
+
+  const call=await axios.post(Baseurl+"/payment/create",{},{withCredentials:true})
 const {orderId,userId,amount,currency}=call.data.saved;
 
    const options = {
@@ -44,6 +48,7 @@ const {orderId,userId,amount,currency}=call.data.saved;
    
   const rzp = new window.Razorpay(options);   //this will create an object of razorpay and dialog box of RP will pop up
   rzp.open();
+}
 }
 
 
