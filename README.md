@@ -119,8 +119,8 @@ now
 - maybe we delete existing dist and download new by npm run build as t may give overwriting errors...but to be safe always delete and npm  run build
 
 ‼️ shortcut for FRONTEND OR DevTinder_UI on ubuntu‼️
-git pull origin main
 rm -rf dist
+git pull origin main
 npm i
 npm run build
 sudo cp -r dist/* /var/www/html/

@@ -11,12 +11,11 @@ const Chat = () => {
 const userid= loggedin?._id;
 const [msg,setmsg]=useState("");
 const [chats,setchats]=useState([]);
-console.log(toId.toString())
 
 
 const prevchat=async()=>{
 const data=await axios.get(Baseurl+"/main/chat/"+toId.toString(),{withCredentials:true});
-console.log(data);
+
 
 const allprevchats=data?.data?.messages?.map((val)=>({
  firstname:val?.senderid?.first_name,
@@ -52,7 +51,7 @@ useEffect(()=>{
   socket.emit("joinchat",{toId,userid});   //this way connecting to backend socket.io "joinchat" 
 
 socket.on("msg received",({firstname,userid,text,photourl,createdAt})=>{   //getting the msg using handler at backend, both sender,rec will receive 
-console.log(firstname + " : " + text)
+
 setchats(prev=>[...prev,{firstname:firstname,senderid:userid,text:text,photourl:photourl,createdAt:createdAt}]);
 });
 

@@ -8,8 +8,6 @@ const Reqitems = ({props}) => {
    const {first_name,last_name,email,photourl,about}=props.fromuserId;
    const dispatch=useDispatch(); 
 
-console.log(props);
-
      
    const call=async(reqstatus,reqid)=>{
     await axios.post(Baseurl+"/request/review"+"/"+reqstatus+"/"+reqid,{},{withCredentials:true});

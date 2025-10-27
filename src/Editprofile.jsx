@@ -20,7 +20,6 @@ const Editprofile = ({select}) => {
  const [selectedoptions,setselectedoptions]=useState([]);
    const [errmsg,seterrmsg]=useState("");
 
-   console.log(selectedoptions)
      
 const saveprofile=async(e)=>{
     try{
