@@ -15,7 +15,7 @@ const Editprofile = ({select}) => {
    const [ageno,setageno]=useState(select.age);
    const [About,setAbout]=useState(select.about);
    const [photo,setphoto]=useState(select.photourl);
-   const [mail,setmail]=useState(select.email);
+
 
  const [selectedoptions,setselectedoptions]=useState([]);
    const [errmsg,seterrmsg]=useState("");

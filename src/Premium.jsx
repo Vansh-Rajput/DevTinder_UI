@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { Baseurl } from './utils/constants'
 
 const Premium = () => {
@@ -22,7 +22,7 @@ const handleclick=async()=>{
     
   },{withCredentials:true})
 
-const {orderId,userId,status,amount,currency,receipt,notes}=call.data.saved;
+const {orderId,userId,amount,currency}=call.data.saved;
 
    const options = {
         key: call?.data?.key_id, // Replace with your Razorpay key_id

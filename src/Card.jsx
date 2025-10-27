@@ -31,12 +31,12 @@ const Card = ({ feed_data,setover }) => {
       className="absolute select-none cursor-grab"
     >
       <div className="w-[300px] md:w-[400px] h-min bg-gray-900 border border-gray-700 rounded-lg p-2.5 shadow-xl shadow-gray-800">
-        <img className="rounded-lg h-[320px] w-[300px] md:h-[460px] md:w-[400px] object-cover pointer-events-none" src={photourl} />
+        <img alt='cards' className="rounded-lg h-[320px] w-[300px] md:h-[460px] md:w-[400px] object-cover pointer-events-none" src={photourl} />
         <div className="p-3 flex flex-col">
           <h5 className="mb-3 text-xl md:text-2xl font-bold text-white flex items-center justify-between">
             {first_name.toUpperCase()} {last_name.toUpperCase()}
           
-     { ispremium && <img src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.webp" className='w-[50px] h-[50px]'/> }
+     { ispremium && <img alt='premium' src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.webp" className='w-[50px] h-[50px]'/> }
           </h5>
 
           <div className="w-[50%] bg-gray-700 h-1 rounded-full">

@@ -24,7 +24,7 @@ const logout=async()=>{
     {/* Left: Logo + Brand */}
     <div className='flex gap-32 mb-2'>
     <div className="flex items-center">
-      <img src="/myimg.webp" className="h-8 w-8 md:h-10 md:w-10 object-cover" loading='lazy' />
+      <img alt='logo' src="/myimg.webp" className="h-8 w-8 md:h-10 md:w-10 object-cover" loading='lazy' />
       <span className="text-white text-lg md:text-2xl font-semibold ml-1">
         Dev Tinder
       </span>
@@ -53,10 +53,10 @@ const logout=async()=>{
 </div>
 
     {/* Center: Nav Links */}
-    <ul className="flex flex-wrap  items-center gap-3 md:gap-7 text-xs md:text-base">
-      <li><a href="/main" className="border-[1px] p-2 border-gray-700 rounded-full md:p-3  text-white hover:text-gray-400">Home</a></li>
-      <li><a href="/main/connections" className="border-[1px] p-2 border-gray-700 rounded-full md:p-3 text-white hover:text-gray-400">Connections</a></li>
-      <li><a href="/main/requests" className="border-[1px] p-2 border-gray-700 rounded-full md:p-3 text-white hover:text-gray-400">Requests</a></li>
+    <div className="flex flex-wrap  items-center gap-3 md:gap-7 text-xs md:text-base">
+      <div><a href="/main" className="border-[1px] p-2 border-gray-700 rounded-full md:p-3  text-white hover:text-gray-400">Home</a></div>
+      <div><a href="/main/connections" className="border-[1px] p-2 border-gray-700 rounded-full md:p-3 text-white hover:text-gray-400">Connections</a></div>
+      <div><a href="/main/requests" className="border-[1px] p-2 border-gray-700 rounded-full md:p-3 text-white hover:text-gray-400">Requests</a></div>
 
       <button
         onClick={() => navigate('/main/premium')}
@@ -68,7 +68,7 @@ const logout=async()=>{
           Premium
         </span>
       </button>
-    </ul>
+    </div>
 
     {/* Right: Profile + Logout */}
     <div className="md:flex items-center gap-3 md:gap-6 text-xs md:text-base hidden">

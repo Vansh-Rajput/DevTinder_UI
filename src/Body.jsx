@@ -1,12 +1,10 @@
 import Navbar from './utils/Navbar';
-import Footer from './utils/Footer';
 import { Outlet, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Baseurl } from './utils/constants';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { addUser } from './utils/Userslice';
-import Feed from './Feed';
 
 
 const Body = () => {
