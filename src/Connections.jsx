@@ -25,11 +25,11 @@ dispatch(addconnections(connections?.data));
     },[]);
 
 
-    if(!friends)
-        return;
 
-    if(friends.length===0)
-        return <p>No Connections Found</p>
+    if(friends===null)
+        return (<div className="text-center mt-16">
+               <p className="md:text-4xl font-semibold">No Connections Currently</p>
+                     </div>)
 
   return (
     <div>
