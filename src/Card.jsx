@@ -28,33 +28,33 @@ const Card = ({ feed_data,setover }) => {
          //work evenif swipe was slow
       onSwipe={(direction)=>handleSwipe(direction,_id)} //inbuilt
       preventSwipe={['up', 'down']}
-      className="absolute select-none cursor-grab"
+      className="absolute select-none touch-pan-y cursor-grab active:cursor-grabbing"
     >
-      <div className="w-[300px] md:w-[400px] h-min bg-gray-900 border border-gray-700 rounded-lg p-2.5 shadow-xl shadow-gray-800">
-        <img alt='cards' fetchPriority='high' className="rounded-lg h-[320px] w-[300px] md:h-[460px] md:w-[400px] object-cover pointer-events-none" src={photourl} />
-        <div className="p-3 flex flex-col">
-          <h5 className="mb-3 text-xl md:text-2xl font-bold text-white flex items-center justify-between">
+      <div className="w-[calc(100vw-2rem)] max-w-[25rem] overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-900 p-2 shadow-2xl shadow-black/35 sm:w-[22rem] md:w-[25rem]">
+        <img alt='cards' fetchPriority='high' className="h-[min(58vh,22rem)] w-full rounded-xl object-cover object-center pointer-events-none sm:h-[min(60vh,25rem)] md:h-[27rem]" src={photourl} />
+        <div className="flex flex-col p-4 sm:p-5">
+          <h5 className="mb-4 flex items-center justify-between gap-3 break-words text-xl font-bold tracking-tight text-white sm:text-2xl">
             {first_name.toUpperCase()} {last_name.toUpperCase()}
           
-     { ispremium && <img alt='premium' src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.webp" className='w-[50px] h-[50px]'/> }
+     { ispremium && <img alt='premium' src="/ChatGPT Image Jul 28, 2025, 10_12_54 PM.webp" className='h-10 w-10 shrink-0 rounded-lg object-cover sm:h-12 sm:w-12'/> }
           </h5>
 
-          <div className="w-[50%] bg-gray-700 h-1 rounded-full">
+          <div className="h-1.5 w-full max-w-xs overflow-hidden rounded-full bg-slate-700">
   <div
-    className="bg-blue-500 h-1 rounded-full"
+    className="h-full rounded-full bg-blue-500"
         style={{ width: `${score}%` }}
   />
 </div>
-<p className="text-xs text-gray-300">{Math.ceil(score)}% skill match</p>
+<p className="mt-1.5 text-xs font-medium text-slate-300">{Math.ceil(score)}% skill match</p>
 
-          <p className="text-sm text-gray-400 mt-2 mb-1">{about}</p>
+          <p className="mt-3 mb-4 text-sm leading-6 text-slate-300 sm:text-[15px]">{about}</p>
 
 
     <div className="flex flex-wrap gap-2">
   {skills.map((skill, idx) => (
     <span
       key={idx}
-      className="bg-gray-800 text-blue-400 text-[8px] md:text-xs font-medium px-2 py-1 rounded-full border border-blue-700"
+      className="rounded-full border border-blue-400/35 bg-blue-500/10 px-2.5 py-1 text-xs font-medium text-blue-200"
     >
       {skill}
     </span>
@@ -69,3 +69,4 @@ const Card = ({ feed_data,setover }) => {
 };
 
 export default Card;
+
